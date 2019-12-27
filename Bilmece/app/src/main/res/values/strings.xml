@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Robotik Oyunu</string>
+    <string name="saldir">Saldır</string>
+    <string name="yemek_ye">Yemek Ye</string>
+    <string name="uyu">Uyu</string>
+    <string name="attributes">attributes</string>
+    <string name="message">message</string>
+</resources>

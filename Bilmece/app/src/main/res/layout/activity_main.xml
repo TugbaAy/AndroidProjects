@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/attributes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center"
+            android:lines="4"
+            android:maxLines="4"
+            android:singleLine="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="172dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/saldir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="20dp"
+            android:text="@string/saldir" />
+
+        <Button
+            android:id="@+id/yemekYe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="20dp"
+            android:text="@string/yemek_ye" />
+
+        <Button
+            android:id="@+id/uyu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="20dp"
+            android:text="@string/uyu" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="161dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="318dp"
+            android:layout_height="54dp"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/isim"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:gravity="center"
+            android:hint="Lütfen karakterinize isim giriniz." />
+
+    </LinearLayout>
+
+</LinearLayout>
