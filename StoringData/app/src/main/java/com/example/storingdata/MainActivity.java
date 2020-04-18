@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     EditText age;
     TextView result;
     Button save;
+    Button delete;
+    SharedPreferences sharedPreferences;
 
 
     @Override
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         age = findViewById(R.id.age);
         result = findViewById(R.id.result);
         save = findViewById(R.id.enter);
+        delete = findViewById(R.id.delete);
 
         /*
         Uygulama yazarken bazı verileri uygulama kapatılsada saklamak isteriz.
@@ -40,19 +43,39 @@ public class MainActivity extends AppCompatActivity {
         //this.getPreferences -> aynı aktivite içerisinde veri kaydetme/gösterme
         // this.getSharedPreferences ->kaydettiğimiz veriyi farklı bir activity’de kullanmak istediğimizde
 
-        SharedPreferences sharedPreferences = this.getSharedPreferences("com.example.storingdata", Context.MODE_PRIVATE);
+        sharedPreferences = this.getSharedPreferences("com.example.storingdata", Context.MODE_PRIVATE);
+        final int storedAge = sharedPreferences.getInt("storedAge",0); // eğer ki storedAge key'li kaydedilmiş bir değer bulunamazsa default olarak 2.parametredeki değer yazılır.
+        result.setText("Your Age :" + storedAge);
+
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("button click",age.getText().toString());
                 if(age.getText().toString().isEmpty() || age.getText().toString().matches("")){
                     result.setText("Error");
                 }else{
                     String va = age.getText().toString();
-                    Log.d("else",va);
                     int enteredValue = Integer.parseInt(age.getText().toString());
                     result.setText(String.valueOf(enteredValue));
+
+                    sharedPreferences.edit().putInt("storedAge",enteredValue).apply();
+                    // edit() -> sharedPreferences'i düzenlemeyi sağlar.
+                    // put...() -> sharedPreferences'in içerisine değer eklemeyi sağlar.
+                    // apply() -> kaydetmeyi sağlar.
+
+                    // application silinene kadar değer orada saklı kalır.
+
+                }
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int storedData = sharedPreferences.getInt("storedAge",0);
+                if(storedData != 0){
+                    sharedPreferences.edit().remove("storedAge").apply();
+                    result.setText("Your Age:");
                 }
             }
         });

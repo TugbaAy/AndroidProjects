@@ -22,17 +22,37 @@
         android:gravity="center"
         android:inputType="number" />
 
-    <Button
-        android:id="@+id/enter"
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:layout_marginTop="55dp"
-        android:layout_marginLeft="230dp"
-        android:layout_marginRight="18dp"
-        android:padding="15dp"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="308dp" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="18dp"
+            android:padding="15dp"
+            android:text="Save"
+            tools:layout_editor_absoluteX="224dp"
+            tools:layout_editor_absoluteY="308dp" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="8dp"
+            android:padding="15dp"
+            android:text="Delete"
+            tools:layout_editor_absoluteX="224dp"
+            tools:layout_editor_absoluteY="308dp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/result"
